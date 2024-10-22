@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-vector/abstract-watercolor-pastel-background_87374-138.jpg?t=st=1720165468~exp=1720169068~hmac=f79d8622a3abdbfd3276c70b9eabc3a84224acbd340cc9f52c71f4e50940d395&w=1480');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: black;
+            text-align: center;
+            margin-top: 10vh;
+        }
+
+        form {
+            width: 500px;
+            margin: 20px auto;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #060706;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        h2 {
+            color: black;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sentiment Analysis</h1>
+    <form method="POST" action="/">
+        <textarea name="text" rows="4" cols="50" placeholder="Enter a review..."></textarea><br>
+        <input type="submit" value="Analyze">
+    </form>
+    {% if translated_text %}
+    <h2>Analysis Result: {{ translated_text }}</h2>
+    {% endif %}
+</body>
+</html>
+
